@@ -1,0 +1,17 @@
+<div class="navigation">
+    <div class="content">
+    <div class="overboard">
+        <h4>Overboard:</h4>
+
+        <div ng-repeat="survivorName in navigation.overboard">{{survivorName}}</div>
+    </div>
+    <div class="bird" ng-class="{none:navigation.bird===0,dead:navigation.bird===-1}"></div>
+    <div class="thristy">
+        <h4>Thristy:</h4>
+
+        <div ng-repeat="survivorName in navigation.thristy">{{survivorName}}</div>
+    </div>
+    <div class="wounds fight" ng-show="navigation.fight"></div>
+    <div class="wounds row" ng-show="navigation.row"></div>
+</div>
+</div>

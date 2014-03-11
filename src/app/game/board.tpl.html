@@ -1,0 +1,71 @@
+<div class="board">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="boat">
+                <div class="survivors">
+                    <div survivor="survivor"
+                         ng-repeat="survivor in game.boat.seats"></div>
+                </div>
+                <div class="birds">
+                    <div class="bird" ng-show="game.birds>0"></div>
+                    <div class="bird" ng-show="game.birds>1"></div>
+                    <div class="bird" ng-show="game.birds>2"></div>
+                </div>
+            </div>
+            <div class="action">Your turn!</div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <h1>Phase: {{game.phase}}</h1>
+
+            <h1>Navigation stack {{game.navigationStack.length}}</h1>
+
+            <h1>Turn:
+                <div class="avatar small"
+                     ng-class="game.currentPlayer.name"></div>
+            </h1>
+        </div>
+    </div>
+    <div fight="game"></div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div inventory="player.items" name="Items:"></div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div inventory="player.underSeat" name="Under seat:"
+                 click="openItem"></div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <h3>You:</h3>
+
+            <div survivor="player"></div>
+        </div>
+        <div class="span2">
+            <h3>Friend:</h3>
+
+            <div survivor="friend"></div>
+        </div>
+        <div class="span2">
+            <h3>Enemy:</h3>
+
+            <div survivor="enemy"></div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <button class="btn" ng-click="openPickUpModal()">New round</button>
+            <button class="btn" ng-click="firePistol()">Fire pistol</button>
+            <button class="btn" ng-click="openParasol()">Open parasol</button>
+            <button class="btn" ng-click="dropChum()">Drop chum</button>
+            <button class="btn" ng-click="useMedkit()">Use medkit</button>
+            <button class="btn" ng-click="drinkWater()">Drink water</button>
+            <button class="btn" ng-click="row()">Row</button>
+            <button class="btn" ng-click="skip()">Skip</button>
+        </div>
+    </div>
+</div>

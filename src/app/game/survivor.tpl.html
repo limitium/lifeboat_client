@@ -1,0 +1,31 @@
+<div class="survivor {{relClass}}">
+    <div class="avatar {{survivor.name}}">
+
+    </div>
+    <div class="info">
+        <div>{{survivor.name}}</div>
+        <div>Hp:{{survivor.hp}}</div>
+        <div>Strength:{{survivor.strength}}</div>
+        <div>Bonus:{{survivor.getBonus()}}</div>
+        <div>Wounds:{{survivor.wounds}}</div>
+        <div>Is rowed:{{survivor.isRowed}}</div>
+        <div>Is fought:{{survivor.isFought}}</div>
+        <div>Underseat:{{survivor.underSeat.length}}</div>
+        <div ng-repeat="item in survivor.items" click="take">
+            {{item.name}}
+        </div>
+        <div ng-show="relClass=='you'">
+            You, if survive: {{survivor.getSurviveBonus()}}
+        </div>
+        <div ng-show="relClass=='friend'">
+            Friend, if survive: {{survivor.getSurviveBonus()}}
+        </div>
+        <div ng-show="relClass=='enemy'">
+            Enemy, if die: {{survivor.strength}}
+        </div>
+        <div>
+            <button class="btn" ng-click="attack(survivor)">Take seat</button>
+        </div>
+    </div>
+</div>
+
