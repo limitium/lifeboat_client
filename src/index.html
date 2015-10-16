@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
-  <head>
+<html ng-app="lb" ng-controller="MainController as m">
+<head>
     <title ng-bind="pageTitle"></title>
+    <link href="/css/vendor.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/css/app.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
 
-    <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<main ui-view></main>
 
-    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
-
-    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
-  </head>
-  <body>
-    <div class="container-fluid" ui-view="main"></div>
-  </body>
+<script src="/js/vendor.min.js?2"></script>
+<script src="/js/app.min.js?2"></script>
+</body>
 </html>
